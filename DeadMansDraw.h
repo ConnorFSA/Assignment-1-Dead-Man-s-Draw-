@@ -1,4 +1,4 @@
-﻿// Assignment 1; Dead Man's Draw++.h : Include file for standard system include files,
+﻿// DeadMansDraw.h : Include file for standard system include files,
 // or project specific include files.
 
 #pragma once
