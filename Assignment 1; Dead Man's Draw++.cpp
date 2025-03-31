@@ -5,8 +5,28 @@
 
 using namespace std;
 
+class Game {
+public:
+	Game(); 
+	~Game(); 
+
+	void run() {
+		std::cout << "works" << std::endl;
+	}
+};
+
+Game::Game() {
+
+}
+Game::~Game() {
+
+}
+
+// Application Entry Point
 int main()
 {
-	cout << "Hello CMake." << endl;
+	Game game = new Game(); // Create game instance
+	game.run() // Run game
+	delete game; // Free memory once game is finished
 	return 0;
 }
