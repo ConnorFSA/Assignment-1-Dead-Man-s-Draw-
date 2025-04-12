@@ -1,14 +1,4 @@
-#include "Card.h"
-
-class Oracle : public Card
-{
-public:
-	Oracle();
-	~Oracle();
-
-private:
-
-};
+#include "CardTypes.h"
 
 Oracle::Oracle()
 {

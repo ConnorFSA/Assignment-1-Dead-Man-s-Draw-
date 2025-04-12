@@ -1,14 +1,4 @@
-#include "Card.h"
-
-class Chest : public Card
-{
-public:
-	Chest();
-	~Chest();
-
-private:
-
-};
+#include "CardTypes.h"
 
 Chest::Chest()
 {

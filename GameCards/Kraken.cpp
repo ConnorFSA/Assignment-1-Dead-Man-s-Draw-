@@ -1,14 +1,4 @@
-#include "Card.h"
-
-class Kraken : public Card
-{
-public:
-	Kraken();
-	~Kraken();
-
-private:
-
-};
+#include "CardTypes.h"
 
 Kraken::Kraken()
 {

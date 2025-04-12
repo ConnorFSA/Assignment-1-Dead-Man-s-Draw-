@@ -1,14 +1,4 @@
-#include "Card.h"
-
-class Key : public Card
-{
-public:
-	Key();
-	~Key();
-
-private:
-
-};
+#include "CardTypes.h"
 
 Key::Key()
 {

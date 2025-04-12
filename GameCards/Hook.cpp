@@ -1,14 +1,4 @@
-#include "Card.h"
-
-class Hook : public Card
-{
-public:
-	Hook();
-	~Hook();
-
-private:
-
-};
+#include "CardTypes.h"
 
 Hook::Hook()
 {

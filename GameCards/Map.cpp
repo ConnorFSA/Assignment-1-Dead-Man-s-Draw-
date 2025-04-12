@@ -1,14 +1,4 @@
-#include "Card.h"
-
-class Map : public Card
-{
-public:
-	Map();
-	~Map();
-
-private:
-
-};
+#include "CardTypes.h"
 
 Map::Map()
 {

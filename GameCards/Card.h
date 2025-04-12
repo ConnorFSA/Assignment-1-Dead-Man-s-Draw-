@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include "../DeadMansDraw.h"
+
 class Card {
 public:
 	// Card type enum
@@ -23,22 +25,26 @@ private:
 	// Variables
 	CardType _cardType;
 	int value;
+	const Game& _game;
 
 public:
 	// Constructor and destuctor
-	Card ();
+	Card (Game& game);
 	virtual ~Card ();
 
 	// Pure abstract functions
-	virtual std::string toString() = 0;
+	virtual std::string toString() const = 0;
 
 	// Card abstract functions
 	virtual void isPlayed();
 	virtual void isDiscarded();
 	virtual void isBanked();
 
+	// Card functions
+	const CardType& type() const;
+
 	// getters
-	int getValue();
+	int getValue() const;
 };
 
 #endif CARD_H

@@ -1,14 +1,4 @@
-#include "Card.h"
-
-class Anchor : public Card
-{
-public:
-	Anchor();
-	~Anchor();
-
-private:
-
-};
+#include "CardTypes.h"
 
 Anchor::Anchor()
 {

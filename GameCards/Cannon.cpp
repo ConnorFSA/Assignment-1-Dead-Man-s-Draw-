@@ -1,14 +1,4 @@
-#include "Card.h"
-
-class Cannon : public Card
-{
-public:
-	Cannon();
-	~Cannon();
-
-private:
-
-};
+#include "CardTypes.h"
 
 Cannon::Cannon()
 {
