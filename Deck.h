@@ -3,26 +3,28 @@
 
 #include <vector>
 
+#include "DeadMansDraw.h"
 #include "GameCards/Card.h" 
 
 class Deck
 {
 private:
 	std::vector<Card*>& _cards;
+	Game& _game;
 public:
 	// Constructor and destructor
-	Deck();
+	Deck(Game& game);
 	~Deck();
 
 	// Deck Functions
 	void shuffle();
 	Card* drawCard();
-	void createDeck();
+	void createDeck(Game& game);
 	bool isEmpty();
-	int remaningCards();
+	int remainingCards();
 
 	// Getters
 	std::vector<Card*>& getCards();
 };
 
-#endif DECK_H
+#endif // DECK_H
