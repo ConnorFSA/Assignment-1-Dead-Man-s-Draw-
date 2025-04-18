@@ -3,7 +3,7 @@
 #include "Card.h"
 
 // Constructor and destructor
-Card::Card(Game& game, int value) : _game(game), int _value(value){
+Card::Card(Game& game, int value) : _game(game), _value(value){
 
 }
 
@@ -12,7 +12,7 @@ Card::~Card()
 }
 
 // Pure abstract functions
-str::string Card::toString() const
+std::string Card::toString() const
 {
 	return std::string();
 }
@@ -30,9 +30,9 @@ void Card::isBanked()
 {
 }
 
-const CardType& Card::type() const
+const Card::CardType& Card::type() const
 {
-	return _type;
+	return _cardType;
 }
 
 // Getters

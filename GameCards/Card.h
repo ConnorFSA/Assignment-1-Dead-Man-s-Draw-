@@ -6,7 +6,7 @@
 #include "../DeadMansDraw.h"
 
 class Card {
-public:
+protected:
 	// Card type enum
 	enum CardType {
 		Cannon,
@@ -21,15 +21,14 @@ public:
 		Anchor
 	};
 
-private:
 	// Variables
 	CardType _cardType;
-	int value;
+	const int _value;
 	const Game& _game;
 
 public:
 	// Constructor and destuctor
-	Card (Game& game);
+	Card (Game& game, int value);
 	virtual ~Card ();
 
 	// Pure abstract functions
@@ -44,7 +43,7 @@ public:
 	const CardType& type() const;
 
 	// getters
-	int getValue() const;
+	const int getValue() const;
 };
 
-#endif CARD_H
+#endif // CARD_H
