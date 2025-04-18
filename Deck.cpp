@@ -20,6 +20,9 @@ Deck::~Deck()
 // Deck functions
 void Deck::shuffle()
 {
+    std::vector<Card*> shuffleDeck{ _cards.begin(), _cards.end() };
+    std::shuffle(shuffleDeck.begin(), shuffleDeck.end(), std::mt19937{ std::random_device{}() });
+    std::copy(shuffleDeck.begin(), shuffleDeck.end(), _cards.begin());
 }
 
 Card* Deck::drawCard()
@@ -104,7 +107,7 @@ int Deck::remainingCards()
 }
 
 // Getters
-const std::vector<Card*>& Deck::getCards()
+std::vector<Card*>& Deck::getCards()
 {
 	return _cards;
 }

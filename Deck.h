@@ -24,7 +24,7 @@ public:
 	int remainingCards();
 
 	// Getters
-	const std::vector<Card*>& getCards();
+	std::vector<Card*>& getCards();
 };
 
 #endif // DECK_H
