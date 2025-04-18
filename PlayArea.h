@@ -21,6 +21,7 @@ public:
 	// PlayArea functions
 	void addCard(Card*);
 	void discardCards();
+	void clearCards();
 
 	// Getters
 	std::vector<Card*> getCards();

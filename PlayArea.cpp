@@ -32,6 +32,11 @@ void PlayArea::discardCards()
 	_count = 0;
 }
 
+void PlayArea::clearCards()
+{
+	_cards.clear();
+}
+
 // Getters
 std::vector<Card*> PlayArea::getCards()
 {

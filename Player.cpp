@@ -48,19 +48,14 @@ bool Player::play(Card* card)
 
 void Player::bankCards() 
 {
-   if (!hasBusted()) {
-       // Get the cards from the play area
-	   std::vector<Card*> cards = _playArea->getCards();
+    // Get the cards from the play area
+	std::vector<Card*> cards = _playArea->getCards();
 
-       // Pass the cards to the Bank's calculateScore method
-       int score = _bank->calculateScore(cards);
+	// Add the cards to the bank
+    _bank->addCards(cards);
 
-       // Add the score to the player's total score
-       _score += score;
-
-       // Clear the cards from the play area
-       _playArea->getCards().clear();
-   }
+    // Clear the cards from the play area
+    _playArea->clearCards();
 }
 
 bool Player::hasBusted() 
@@ -110,6 +105,8 @@ void Player::printBank()
 {
   std::map<Card::CardType, std::vector<Card*>> suitMap;
 
+  std::cout << _name << "'s Bank:" << std::endl;
+
   // Group cards by suit
   for (Card* card : _bank->getCards()) {
       suitMap[card->type()].push_back(card);
@@ -129,12 +126,13 @@ void Player::printBank()
       }
       std::cout << std::endl;
   }
+  std::cout << "| Score: " << _bank->calculateScore() << std::endl;
 }
 
 // Getters
 int Player::getScore() 
 {
-    return 0;
+    return _bank->calculateScore();
 }
 
 std::string& Player::getName() 

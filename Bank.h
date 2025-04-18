@@ -17,7 +17,8 @@ public:
 	~Bank();
 
 	// Bank functions
-	int calculateScore(std::vector<Card*>);
+	int calculateScore();
+	void addCards(std::vector<Card*> cards);
 
 	// Getters
 	std::vector<Card*> getCards();

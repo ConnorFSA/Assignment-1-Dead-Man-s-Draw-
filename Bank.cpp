@@ -2,20 +2,38 @@
 #include "GameCards/Card.h"
 
 // Constructor and destructor
-Bank::Bank() {
+Bank::Bank() : _cards(){
 }
 
 Bank::~Bank() {
 }
 
 // Bank functions
-int Bank::calculateScore(std::vector<Card*> cards)
+int Bank::calculateScore()
 {
-	return 0;
+   int totalScore = 0;
+   for (const Card* card : _cards) {
+       if (card) {
+           totalScore += card->getValue();
+       }
+   }
+   return totalScore;
+}
+
+void Bank::addCards(std::vector<Card*> cards)
+{
+	for (Card* card : cards) {
+		_cards.push_back(card);
+	}
+	// Call the isBanked function for each card
+	for (Card* card : cards) {
+		card->isBanked();
+	}
 }
 
 // Getters
 std::vector<Card*> Bank::getCards()
 {
-	return std::vector<Card*>();
+
+	return _cards;
 }

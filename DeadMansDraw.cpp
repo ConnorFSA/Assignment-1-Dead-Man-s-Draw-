@@ -108,6 +108,7 @@ bool Game::playTurn()
 		// If the player chooses not to draw, exit the loop
 		if (!drawAgain) {
 			_currentPlayer->bankCards();
+			_currentPlayer->printBank();
 			break;
 		}
 
