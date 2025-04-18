@@ -18,22 +18,32 @@ Player::~Player() {
 }
 
 // Player functions
-void Player::play(Card* card) 
+bool Player::play(Card* card) 
 {
 	// Check if the card is null
 	if (card == nullptr) {
 		std::cout << "Error: Attempted to play a null card." << std::endl;
-		return;
+		return true;
 	}
+
+	std::cout << this->_name << " Draws a " << card->toString() << std::endl;
+	
 	// Add the card to the play area
 	_playArea->addCard(card);
 
 	// Check if the player has busted
 	if (this->hasBusted()) {
 		std::cout << "BUST! " << this->_name << " loses all cards in teh play area." << std::endl;
-        
-		return;
-	}
+        _playArea->discardCards();
+        // Return true if busted
+        return true;
+    }
+    else {
+        std::cout << card->printAbility() << std::endl;
+		card->isPlayed();
+		// Return false if not busted
+        return false;
+    }
 }
 
 void Player::bankCards() 
@@ -55,7 +65,19 @@ void Player::bankCards()
 
 bool Player::hasBusted() 
 {
-    return false;
+   std::vector<Card*> cards = _playArea->getCards();
+   std::map<Card::CardType, int> cardTypeCount;
+
+   // Count occurrences of each card type
+   for (Card* card : cards) {
+       cardTypeCount[card->type()]++;
+       // If any card type appears more than once, return true
+       if (cardTypeCount[card->type()] > 1) {
+           return true;
+       }
+   }
+
+   return false; // No duplicates found
 }
 
 // Display functions

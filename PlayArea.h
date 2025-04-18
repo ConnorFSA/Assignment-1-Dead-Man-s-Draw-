@@ -3,12 +3,15 @@
 
 #include <vector>
 
+class DiscardPile;
+
 class PlayArea
 {
 private:
 	// Variables
 	std::vector<Card*> _cards;
 	int _count;
+	DiscardPile* _discardPile;
 
 public:
 	// Constructor and destructor
@@ -17,6 +20,7 @@ public:
 
 	// PlayArea functions
 	void addCard(Card*);
+	void discardCards();
 
 	// Getters
 	std::vector<Card*> getCards();

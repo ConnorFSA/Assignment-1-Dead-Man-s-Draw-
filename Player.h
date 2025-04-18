@@ -25,7 +25,7 @@ public:
 	~Player();
 
 	// Player functions
-	void play(Card* card);
+	bool play(Card* card);
 	void bankCards();
 	bool hasBusted();
 

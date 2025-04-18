@@ -39,6 +39,7 @@ public:
 	virtual void isPlayed();
 	virtual void isDiscarded();
 	virtual void isBanked();
+	virtual std::string printAbility();
 
 	// Card functions
 	const CardType& type() const;

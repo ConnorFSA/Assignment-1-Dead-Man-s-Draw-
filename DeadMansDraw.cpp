@@ -11,7 +11,7 @@
 #include "Player.h"
 
 // Constructor and destructor
-Game::Game() : _deck(new Deck(*this)), _turn(0), _round(0), _currentPlayer(nullptr) {
+Game::Game() : _deck(new Deck(*this)), _turn(0), _round(1), _currentPlayer(nullptr) {
 }
 Game::~Game() {
 	delete _deck;
@@ -34,11 +34,10 @@ void Game::startGame() {
 
 	_currentPlayer = _players[0];
 
+	std::cout << "Starting Dead Man's Draw++!" << std::endl;
+
 	// Begin Round
 	while (true) {
-		// Increment round
-		_round++;
-
 		// Check if game is over
 		if (getDeck()->isEmpty() or _turn > 20) {
 			break;
@@ -68,25 +67,36 @@ void Game::switchPlayer()
 	if (it != _players.end()) {
 		// Calculate the next player's index, wrapping around if necessary
 		++it;
-		_currentPlayer = *it;
+		if (it == _players.end()) {
+			_currentPlayer = _players[0];
+			// Increment round
+			_round++;
+		}
+		else {
+			_currentPlayer = *it; 
+		}
 	}
 	// Set current player to the first player
 	else {
 		_currentPlayer = _players[0];
+		// Increment round
+		_round++;
 	}
 }
 
-
 bool Game::playTurn()
 {
+	bool busted = false;
 	// Increment turn
 	++_turn;
+
+	std::cout << "--- Round " << _round << ", Turn " << _turn << " ---" << std::endl;
 
 	// Draw a card for the current player
 	_currentPlayer->play(_deck->drawCard());
 
 	// Loop while the player has not busted
-	while (!_currentPlayer->hasBusted()) {
+	while (!busted) {
 		// Ask the player if they want to draw again
 		std::cout << "Draw again? (y/n): ";
 		char choice;
@@ -101,10 +111,10 @@ bool Game::playTurn()
 			break;
 		}
 
-		// Otherwise, draw another card
-		_currentPlayer->play(_deck->drawCard());
+		// Draw another card
+		busted = _currentPlayer->play(_deck->drawCard());
+		_currentPlayer->printPlayArea();
 	}
-
 	return false;
 }
 
