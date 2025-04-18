@@ -8,6 +8,7 @@
 #include <string>
 
 #include "Deck.h"
+#include "Player.h"
 
 class Game {
 private:
