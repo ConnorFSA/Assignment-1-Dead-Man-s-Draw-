@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "Card.h"
+#include "GameCards/Card.h"
 
 class DiscardPile
 {
@@ -17,7 +17,7 @@ public:
 	~DiscardPile();
 
 	// DiscardPile functions
-	void addCard(Card*);
+	void addCards(std::vector<Card*> cards);
 	bool isEmpty();
 	
 

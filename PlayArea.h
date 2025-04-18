@@ -8,6 +8,7 @@ class PlayArea
 private:
 	// Variables
 	std::vector<Card*> _cards;
+	int _count;
 
 public:
 	// Constructor and destructor

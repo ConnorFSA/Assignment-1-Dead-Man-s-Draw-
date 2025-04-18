@@ -4,14 +4,22 @@
 
 // Constructor and destructor
 DiscardPile::DiscardPile() {
+	_discardedCards = std::vector<Card*>();
 }
 
 DiscardPile::~DiscardPile() {
 }
 
 // DiscardPile functions
-void DiscardPile::addCard(Card*)
+void DiscardPile::addCards(std::vector<Card*> cards)
 {
+	for (Card* card : cards) {
+		_discardedCards.push_back(card);
+	}
+
+	for (Card* card : cards) {
+		card->isDiscarded();
+	}
 }
 
 bool DiscardPile::isEmpty()

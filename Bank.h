@@ -3,11 +3,13 @@
 
 #include <vector>
 
+#include "GameCards/Card.h"
+
 class Bank
 {
 private:
 	//Variables
-	std::vector<Card*> cards;
+	std::vector<Card*> _cards;
 
 public:
 	// Constructor and destructor
@@ -15,7 +17,7 @@ public:
 	~Bank();
 
 	// Bank functions
-	int calculateScore();
+	int calculateScore(std::vector<Card*>);
 
 	// Getters
 	std::vector<Card*> getCards();
