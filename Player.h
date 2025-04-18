@@ -13,6 +13,7 @@ private:
 	int _score;
 	Bank* _bank;
 	PlayArea* _playArea;
+	std::string _names[10] = { "Sam", "Billy", "Jen", "Bob", "Sally", "Joe", "Sue", "Sasha", "Tina", "Marge" };
 	std::string _name;
 
 public:
@@ -21,8 +22,8 @@ public:
 	~Player();
 
 	// Player functions
-	void play();
-	void bankCards(std::vector<Card*>);
+	void play(Card* card);
+	void bankCards();
 	bool hasBusted();
 
 	// Display functions
