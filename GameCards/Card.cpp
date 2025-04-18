@@ -3,7 +3,7 @@
 #include "Card.h"
 
 // Constructor and destructor
-Card::Card(Game& game, int value) : _game(game), _value(value){
+Card::Card(Game* game, int value) : _game(game), _value(value){
 
 }
 

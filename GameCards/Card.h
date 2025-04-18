@@ -6,9 +6,9 @@
 #include "../DeadMansDraw.h"
 
 class Card {
-protected:
+public:
 	// Card type enum
-	enum CardType {
+	enum class CardType { // Fixed by adding 'class' to make it a scoped enum
 		Cannon,
 		Chest,
 		Key,
@@ -21,15 +21,16 @@ protected:
 		Anchor
 	};
 
+protected:
 	// Variables
 	CardType _cardType;
 	const int _value;
-	const Game& _game;
+	const Game* _game;
 
 public:
-	// Constructor and destuctor
-	Card (Game& game, int value);
-	virtual ~Card ();
+	// Constructor and destructor
+	Card(Game* game, int value);
+	virtual ~Card();
 
 	// Pure abstract functions
 	virtual std::string toString() const = 0;
@@ -42,7 +43,7 @@ public:
 	// Card functions
 	const CardType& type() const;
 
-	// getters
+	// Getters
 	const int getValue() const;
 };
 

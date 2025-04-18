@@ -3,6 +3,7 @@
 
 #include "Deck.h"
 #include "GameCards/CardTypes.h"
+#include "DeadMansDraw.h"
 
 // Constructor and destructor
 Deck::Deck(Game& game) : _cards(), _game(game) {
@@ -37,7 +38,7 @@ Card* Deck::drawCard()
     return drawnCard;
 }
 
-void Deck::createDeck(Game& game)
+void Deck::createDeck(Game* game)
 {
     // Cannons: 2-7
     for (int value = 2; value <= 7; value++) {
@@ -103,7 +104,7 @@ int Deck::remainingCards()
 }
 
 // Getters
-std::vector<Card*>& Deck::getCards()
+const std::vector<Card*>& Deck::getCards()
 {
-	// TODO: insert return statement here
+	return _cards;
 }

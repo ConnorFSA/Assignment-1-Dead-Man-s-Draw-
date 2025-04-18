@@ -1,7 +1,7 @@
 #include "CardTypes.h"  
 #include "Card.h"  
 
-Hook::Hook(Game& game, int value) : Card(game, value) {
+Hook::Hook(Game* game, int value) : Card(game, value) {
 	_cardType = CardType::Hook;
 }
 

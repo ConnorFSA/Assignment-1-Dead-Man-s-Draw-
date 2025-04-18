@@ -25,7 +25,7 @@ Game::~Game() {
 // Game functions
 void Game::startGame() {
 	// Create and shuffle deck
-	_deck->createDeck();
+	_deck->createDeck(this);
 	_deck->shuffle();
 
 	// Create new players

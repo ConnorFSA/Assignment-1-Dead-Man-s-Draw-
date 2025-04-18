@@ -1,7 +1,7 @@
 #include "CardTypes.h"  
 #include "Card.h"  
 
-Map::Map(Game& game, int value) : Card(game, value) {
+Map::Map(Game* game, int value) : Card(game, value) {
 	_cardType = CardType::Map;
 }
 

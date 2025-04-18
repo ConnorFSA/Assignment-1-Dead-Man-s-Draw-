@@ -1,7 +1,7 @@
 #include "CardTypes.h"  
 #include "Card.h"  
 
-Mermaid::Mermaid(Game& game, int value) : Card(game, value) {
+Mermaid::Mermaid(Game* game, int value) : Card(game, value) {
 	_cardType = CardType::Mermaid;
 }  
 

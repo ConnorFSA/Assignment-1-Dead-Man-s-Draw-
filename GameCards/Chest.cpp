@@ -1,7 +1,7 @@
 #include "CardTypes.h"  
 #include "Card.h"  
 
-Chest::Chest(Game& game, int value) : Card(game, value) {
+Chest::Chest(Game* game, int value) : Card(game, value) {
 	_cardType = CardType::Chest;
 }
 

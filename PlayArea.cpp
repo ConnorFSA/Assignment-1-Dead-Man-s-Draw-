@@ -4,7 +4,8 @@
 #include "PlayArea.h"
 
 // Constructor and destructor
-PlayArea::PlayArea() {
+PlayArea::PlayArea() : _count(0), _cards() {
+
 }
 
 PlayArea::~PlayArea() {
@@ -20,5 +21,5 @@ void PlayArea::addCard(Card* card)
 // Getters
 std::vector<Card*> PlayArea::getCards()
 {
-    // TODO: insert return statement here
+	return _cards;
 }

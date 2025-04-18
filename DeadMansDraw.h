@@ -7,8 +7,9 @@
 #include <vector>
 #include <string>
 
-#include "Deck.h"
-#include "Player.h"
+class Deck;
+
+class Player;
 
 class Game {
 private:

@@ -30,5 +30,5 @@ bool DiscardPile::isEmpty()
 // Getters
 std::vector<Card*>& DiscardPile::getCards()
 {
-	// TODO: insert return statement here
+	return _discardedCards;
 }

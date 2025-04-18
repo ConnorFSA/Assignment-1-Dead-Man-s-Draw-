@@ -3,8 +3,11 @@
 
 #include <string>
 
-#include "Bank.h"
-#include "PlayArea.h"
+class PlayArea;
+
+class Bank;
+
+class Card;
 
 class Player
 {

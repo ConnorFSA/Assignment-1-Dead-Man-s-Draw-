@@ -1,7 +1,7 @@
 #include "CardTypes.h"  
 #include "Card.h"  
 
-Sword::Sword(Game& game, int value) : Card(game, value) {
+Sword::Sword(Game* game, int value) : Card(game, value) {
 	_cardType = CardType::Sword;
 }
 

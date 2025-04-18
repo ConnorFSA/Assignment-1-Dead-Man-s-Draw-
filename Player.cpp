@@ -6,8 +6,9 @@
 #include "Player.h"
 #include "GameCards/Card.h"
 #include "Bank.h"
+#include "PlayArea.h"
 
-Player::Player() : _bank(new Bank()), _playArea(new PlayArea()) {
+Player::Player() : _bank(new Bank()), _playArea(new PlayArea()), _score(0) {
 _name = _names[rand() % 10];
 }
 
@@ -28,8 +29,8 @@ void Player::play(Card* card)
 	_playArea->addCard(card);
 
 	// Check if the player has busted
-	if (hasBusted()) {
-		std::cout << "BUST! " << _name << " loses all cards in teh play area." << std::endl;
+	if (this->hasBusted()) {
+		std::cout << "BUST! " << this->_name << " loses all cards in teh play area." << std::endl;
         
 		return;
 	}
@@ -116,5 +117,5 @@ int Player::getScore()
 
 std::string& Player::getName() 
 {
-    // TODO: insert return statement here
+	return _name;
 }

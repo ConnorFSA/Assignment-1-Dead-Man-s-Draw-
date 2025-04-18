@@ -1,7 +1,7 @@
 #include "CardTypes.h"  
 #include "Card.h"  
 
-Oracle::Oracle(Game& game, int value) : Card(game, value) {
+Oracle::Oracle(Game* game, int value) : Card(game, value) {
 	_cardType = CardType::Oracle;
 }
 

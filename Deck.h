@@ -3,13 +3,13 @@
 
 #include <vector>
 
-#include "DeadMansDraw.h"
-#include "GameCards/Card.h" 
+class Game;
+class Card;
 
 class Deck
 {
 private:
-	std::vector<Card*>& _cards;
+	std::vector<Card*> _cards;
 	Game& _game;
 public:
 	// Constructor and destructor
@@ -19,12 +19,12 @@ public:
 	// Deck Functions
 	void shuffle();
 	Card* drawCard();
-	void createDeck(Game& game);
+	void createDeck(Game* game);
 	bool isEmpty();
 	int remainingCards();
 
 	// Getters
-	std::vector<Card*>& getCards();
+	const std::vector<Card*>& getCards();
 };
 
 #endif // DECK_H
