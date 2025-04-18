@@ -36,6 +36,8 @@ public:
 	// Getters
 	int getScore();
 	std::string& getName();
+	Bank* getbank();
+	PlayArea* getPlayArea();
 };
 
 #endif PLAYER_H

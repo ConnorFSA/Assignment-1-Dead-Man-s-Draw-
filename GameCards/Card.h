@@ -25,7 +25,7 @@ protected:
 	// Variables
 	CardType _cardType;
 	const int _value;
-	const Game* _game;
+	Game* _game;
 
 public:
 	// Constructor and destructor
@@ -39,7 +39,6 @@ public:
 	virtual void isPlayed();
 	virtual void isDiscarded();
 	virtual void isBanked();
-	virtual std::string printAbility();
 
 	// Card functions
 	const CardType& type() const;

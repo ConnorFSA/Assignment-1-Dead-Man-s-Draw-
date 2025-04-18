@@ -39,7 +39,6 @@ bool Player::play(Card* card)
         return true;
     }
     else {
-        std::cout << card->printAbility() << std::endl;
 		card->isPlayed();
 		// Return false if not busted
         return false;
@@ -138,4 +137,14 @@ int Player::getScore()
 std::string& Player::getName() 
 {
 	return _name;
+}
+
+Bank* Player::getbank()
+{
+    return _bank;
+}
+
+PlayArea* Player::getPlayArea()
+{
+	return _playArea;
 }

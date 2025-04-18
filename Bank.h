@@ -22,6 +22,7 @@ public:
 
 	// Getters
 	std::vector<Card*> getCards();
+	std::vector<Card*>& getCardsRef();
 };
 
 #endif BANK_H

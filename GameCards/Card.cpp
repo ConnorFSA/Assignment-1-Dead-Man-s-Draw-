@@ -30,11 +30,6 @@ void Card::isBanked()
 {
 }
 
-std::string Card::printAbility()
-{
-	return "temp";
-}
-
 const Card::CardType& Card::type() const
 {
 	return _cardType;

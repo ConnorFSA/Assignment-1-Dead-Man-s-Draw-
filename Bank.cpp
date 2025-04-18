@@ -1,3 +1,7 @@
+#include <map>
+#include <vector>
+#include <string>
+
 #include "Bank.h"
 #include "GameCards/Card.h"
 
@@ -11,13 +15,28 @@ Bank::~Bank() {
 // Bank functions
 int Bank::calculateScore()
 {
-   int totalScore = 0;
-   for (const Card* card : _cards) {
-       if (card) {
-           totalScore += card->getValue();
-       }
-   }
-   return totalScore;
+    std::map<Card::CardType, int> highestValues;  
+
+    for (const Card* card : _cards) {  
+        if (card) {  
+            Card::CardType type = card->type();  
+            int value = card->getValue();  
+
+			// Check if the type is already in the map and update the value if it's higher
+            if (highestValues.find(type) == highestValues.end() || highestValues[type] < value) {  
+                highestValues[type] = value;  
+            }  
+        }  
+    }  
+
+	// Calculate the total score by summing the highest values for each type
+    int totalScore = 0;  
+    for (const auto& [type, value] : highestValues) {  
+        totalScore += value;  
+    }  
+
+    return totalScore;  
+
 }
 
 void Bank::addCards(std::vector<Card*> cards)

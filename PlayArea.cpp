@@ -42,3 +42,8 @@ std::vector<Card*> PlayArea::getCards()
 {
 	return _cards;
 }
+
+DiscardPile* PlayArea::getDiscardPile()
+{
+	return _discardPile;
+}

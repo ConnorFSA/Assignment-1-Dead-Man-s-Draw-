@@ -25,6 +25,7 @@ public:
 
 	// Getters
 	std::vector<Card*> getCards();
+	DiscardPile* getDiscardPile();
 };
 
 #endif PLAY_AREA_H
