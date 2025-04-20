@@ -27,9 +27,8 @@ void Kraken::isPlayed() {
         std::cout << "The kraken has draw a " << card->toString() << " card." << std::endl;
 
         // Call the isPlayed function for the chosen card is player hasnt busted
-        if (currentPlayer->hasBusted()) {
-            return;
+        if (!currentPlayer->hasBusted()) {
+            card->isPlayed();
         }
-        card->isPlayed();
     }
 }

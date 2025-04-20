@@ -88,12 +88,9 @@ void Deck::createDeck(Game* game)
         _cards.push_back(new Kraken(game, value));
     }
 
-    // Bonus task
-    /*
     for (int value = 2; value <= 7; value++) {
         _cards.push_back(new Anchor(game, value));
     }
-    */
 }
 
 bool Deck::isEmpty()

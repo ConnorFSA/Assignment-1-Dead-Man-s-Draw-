@@ -44,6 +44,7 @@ void Game::startGame() {
 		}
 		// Play turn
 		playTurn();
+		_currentPlayer->printBank();
 
 		// Switch player
 		switchPlayer();
@@ -93,7 +94,8 @@ bool Game::playTurn()
 	std::cout << "--- Round " << _round << ", Turn " << _turn << " ---" << std::endl;
 
 	// Draw a card for the current player
-	_currentPlayer->play(_deck->drawCard());
+	busted = _currentPlayer->play(_deck->drawCard());
+	_currentPlayer->printPlayArea();
 
 	// Loop while the player has not busted
 	while (!busted) {

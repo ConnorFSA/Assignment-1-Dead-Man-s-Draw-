@@ -27,7 +27,7 @@ void Anchor::isDiscarded() {
     std::vector<Card*>& discardCards = playArea->getDiscardPile()->getCards();
 
     // If the anchor was the card that caused the bust, skip its effect
-    if (!discardCards.empty() && discardCards.back() == this) {
+    if (!playAreaCards.empty() && playAreaCards.back() == this) {
         return;
     }
 

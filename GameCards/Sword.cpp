@@ -67,6 +67,7 @@ void Sword::isPlayed() {
 
 		// Prompt the user for input  
 		int choice;
+		index = 1;
 		std::cout << "Which card do you pick? ";
 		std::cin >> choice;
 
@@ -75,6 +76,13 @@ void Sword::isPlayed() {
 			if (index == choice) {
 				// Add to current player's play area
 				currentPlayer->getPlayArea()->addCard(card);
+
+				std::cout << currentPlayer->getName() << " has picked the " << card->toString() << " card." << std::endl;
+				// Play ability
+				if (!currentPlayer->hasBusted()) {
+					card->isPlayed();
+				}
+				
 				// Remove from next player's bank
 				auto it = std::find(cards.begin(), cards.end(), card);
 				if (it != cards.end()) {

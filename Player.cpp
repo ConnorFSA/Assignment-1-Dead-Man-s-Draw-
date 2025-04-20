@@ -103,8 +103,11 @@ void Player::printPlayArea()
       });
   }
 
+  std::cout << _name << "'s Play Area:" << std::endl;
+
   // Print each suit and its cards on the same line
   for (const auto& [suit, cards] : suitMap) {
+	  std::cout << "    ";
       for (Card* card : cards) {
           std::cout << card->toString() << " ";
       }
@@ -127,11 +130,11 @@ void Player::printBank()
   for (auto& [suit, cards] : suitMap) {
       std::sort(cards.begin(), cards.end(), [](Card* a, Card* b) {
           return a->getValue() > b->getValue();
-      });
-  }
+      });}
 
   // Print each suit and its cards on the same line
   for (const auto& [suit, cards] : suitMap) {
+      std::cout << "    ";
       for (Card* card : cards) {
           std::cout << card->toString() << " ";
       }

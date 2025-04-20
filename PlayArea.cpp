@@ -23,11 +23,6 @@ void PlayArea::discardCards()
 {
 	// Add cards to the discard pile
 	_discardPile->addCards(_cards);
-	// Call the isDiscarded function for each card
-	for (Card* card : _cards) {
-		card->isDiscarded();
-	}
-
 }
 
 void PlayArea::clearCards()

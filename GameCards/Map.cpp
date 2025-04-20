@@ -16,14 +16,18 @@ std::string Map::toString() const {
 
 void Map::isPlayed() {  
     Player* currentPlayer = _game->getCurrentPlayer();
-    std::vector<Card*>& cards = _game->getDeck()->getCards();
     std::vector<Card*>& discardCards = currentPlayer->getPlayArea()->getDiscardPile()->getCards();
 
-    // Remove the last 3 cards from the deck and store them in a temporary vector  
+	if (discardCards.empty()) {
+		std::cout << "The discard pile is empty map cant draw any cards." << std::endl;
+		return;
+	}
+
+    // Remove the last 3 cards from the discard pile and store them in a temporary vector  
     std::vector<Card*> tempCards;
-    for (int i = 0; i < 3 && !cards.empty(); ++i) {
-        tempCards.push_back(cards.back());
-        cards.pop_back();
+    for (int i = 0; i < 3 && !discardCards.empty(); ++i) {
+        tempCards.push_back(discardCards.back());
+        discardCards.pop_back();
     }
 
     // Display the cards for the user
