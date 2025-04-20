@@ -11,3 +11,7 @@ Mermaid::~Mermaid() {
 std::string Mermaid::toString() const {  
 return "Mermaid(" + std::to_string(getValue()) + ")";  
 }
+
+void Mermaid::isPlayed() {
+	std::cout << "No effect but Mermaids are worth more" << std::endl;
+}
