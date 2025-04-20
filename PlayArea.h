@@ -25,6 +25,7 @@ public:
 
 	// Getters
 	std::vector<Card*> getCards();
+	std::vector<Card*>& getCardsRef();
 	DiscardPile* getDiscardPile();
 };
 

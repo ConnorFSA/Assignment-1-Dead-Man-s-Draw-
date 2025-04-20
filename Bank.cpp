@@ -33,10 +33,9 @@ int Bank::calculateScore()
     int totalScore = 0;  
     for (const auto& [type, value] : highestValues) {  
         totalScore += value;  
-    }  
+    }
 
     return totalScore;  
-
 }
 
 void Bank::addCards(std::vector<Card*> cards)
@@ -53,6 +52,10 @@ void Bank::addCards(std::vector<Card*> cards)
 // Getters
 std::vector<Card*> Bank::getCards()
 {
+	return _cards;
+}
 
+std::vector<Card*>& Bank::getCardsRef()
+{
 	return _cards;
 }

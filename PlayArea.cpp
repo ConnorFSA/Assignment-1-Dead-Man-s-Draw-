@@ -27,18 +27,23 @@ void PlayArea::discardCards()
 	for (Card* card : _cards) {
 		card->isDiscarded();
 	}
+
+}
+
+void PlayArea::clearCards()
+{
 	// Remove cards from the play area
 	_cards.clear();
 	_count = 0;
 }
 
-void PlayArea::clearCards()
-{
-	_cards.clear();
-}
-
 // Getters
 std::vector<Card*> PlayArea::getCards()
+{
+	return _cards;
+}
+
+std::vector<Card*>& PlayArea::getCardsRef()
 {
 	return _cards;
 }
