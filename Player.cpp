@@ -35,14 +35,26 @@ bool Player::play(Card* card)
 	if (this->hasBusted()) {
 		std::cout << "BUST! " << this->_name << " loses all cards in teh play area." << std::endl;
         _playArea->discardCards();
+		_playArea->clearCards();
         // Return true if busted
         return true;
     }
     else {
 		card->isPlayed();
-		// Return false if not busted
+    }
+
+    if (this->hasBusted()) {
+		std::cout << "BUST! " << this->_name << " loses all cards in the play area." << std::endl;
+		_playArea->discardCards();
+		_playArea->clearCards();
+		// Return true if busted
+		return true;
+    }
+    else {
+        // Return false if not busted
         return false;
     }
+
 }
 
 void Player::bankCards() 
