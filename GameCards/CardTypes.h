@@ -25,6 +25,7 @@ public:
 	Chest(Game* game, int value);
 	~Chest();
 	std::string toString() const override;
+	void isPlayed();
 };
 
 class Hook : public Card {
@@ -44,6 +45,7 @@ public:
 	Key(Game* game, int value);
 	~Key();
 	std::string toString() const override;
+	void isPlayed();
 	void isBanked();
 
 };
@@ -75,6 +77,7 @@ public:
 	Mermaid(Game* game, int value);
 	~Mermaid();
 	std::string toString() const override;
+	void isPlayed();
 };
 
 class Oracle : public Card {
@@ -97,16 +100,16 @@ public:
 	void isPlayed();
 };
 
-// Bonus task
-/*
+
 class Anchor : public Card {
 private:
 
 public:
-	Anchor(Game& game, int value);
+	Anchor(Game* game, int value);
+	~Anchor();
 	std::string toString() const override;
 	void isPlayed();
+	void isDiscarded();
 };
-*/
 
 #endif CARD_TYPES_H

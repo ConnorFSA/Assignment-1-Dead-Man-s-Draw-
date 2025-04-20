@@ -45,6 +45,7 @@ public:
 
 	// Getters
 	const int getValue() const;
+
 };
 
 #endif // CARD_H
