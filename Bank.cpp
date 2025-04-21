@@ -10,6 +10,10 @@ Bank::Bank() : _cards(){
 }
 
 Bank::~Bank() {
+    for (Card* card : _cards) {
+        delete card;
+    }
+    _cards.clear();
 }
 
 // Bank functions

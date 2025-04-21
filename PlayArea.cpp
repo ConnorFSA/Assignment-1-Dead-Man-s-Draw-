@@ -5,11 +5,15 @@
 #include "DiscardPile.h"
 
 // Constructor and destructor
-PlayArea::PlayArea() : _count(0), _cards(), _discardPile(new DiscardPile) {
+PlayArea::PlayArea(DiscardPile* discardPile) : _count(0), _cards(), _discardPile(discardPile) {
 
 }
 
 PlayArea::~PlayArea() {
+	for (Card* card : _cards) {
+		delete card;
+	}
+	_cards.clear();
 }
 
 // PlayArea functions

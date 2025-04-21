@@ -8,6 +8,10 @@ DiscardPile::DiscardPile() {
 }
 
 DiscardPile::~DiscardPile() {
+	for (Card* card : _discardedCards) {
+		delete card;
+	}
+	_discardedCards.clear();
 }
 
 // DiscardPile functions

@@ -9,6 +9,8 @@ class Bank;
 
 class Card;
 
+class DiscardPile;
+
 class Player
 {
 private:
@@ -21,7 +23,7 @@ private:
 
 public:
 	// Constructor and destructor
-	Player();
+	Player(DiscardPile* discardpile);
 	~Player();
 
 	// Player functions

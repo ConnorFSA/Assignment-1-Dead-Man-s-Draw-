@@ -7,8 +7,9 @@
 #include "GameCards/Card.h"
 #include "Bank.h"
 #include "PlayArea.h"
+#include "DiscardPile.h"
 
-Player::Player() : _bank(new Bank()), _playArea(new PlayArea()), _score(0) {
+Player::Player(DiscardPile* discardPile) : _bank(new Bank()), _playArea(new PlayArea(discardPile)), _score(0) {
 _name = _names[rand() % 10];
 }
 

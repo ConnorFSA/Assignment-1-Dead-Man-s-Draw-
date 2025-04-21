@@ -15,7 +15,7 @@ private:
 
 public:
 	// Constructor and destructor
-	PlayArea();
+	PlayArea(DiscardPile* discardPile);
 	~PlayArea();
 
 	// PlayArea functions

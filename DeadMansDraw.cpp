@@ -9,12 +9,15 @@
 #include "DeadMansDraw.h"
 #include "Deck.h"
 #include "Player.h"
+#include "DiscardPile.h"
 
 // Constructor and destructor
 Game::Game() : _deck(new Deck(*this)), _turn(0), _round(1), _currentPlayer(nullptr) {
+	DiscardPile* _discardpile = new DiscardPile();
 }
 Game::~Game() {
 	delete _deck;
+	delete _discardpile;
 
 	for (Player* player : _players) {
 		delete player;
@@ -29,8 +32,8 @@ void Game::startGame() {
 	_deck->shuffle();
 
 	// Create new players
-	_players.push_back(new Player());
-	_players.push_back(new Player());
+	_players.push_back(new Player(_discardpile));
+	_players.push_back(new Player(_discardpile));
 
 	_currentPlayer = _players[0];
 
@@ -110,7 +113,6 @@ bool Game::playTurn()
 		// If the player chooses not to draw, exit the loop
 		if (!drawAgain) {
 			_currentPlayer->bankCards();
-			_currentPlayer->printBank();
 			break;
 		}
 

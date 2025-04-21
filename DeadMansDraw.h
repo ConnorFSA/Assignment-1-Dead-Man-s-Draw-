@@ -19,6 +19,7 @@ private:
 	int _round;
 	Player* _currentPlayer;
 	std::vector<Player*> _players;
+	DiscardPile* _discardpile;
 
 public:
 	// Constructor and destructor
