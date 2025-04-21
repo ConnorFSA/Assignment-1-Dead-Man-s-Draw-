@@ -9,6 +9,8 @@
 
 class Deck;
 
+class DiscardPile;
+
 class Player;
 
 class Game {
@@ -19,7 +21,7 @@ private:
 	int _round;
 	Player* _currentPlayer;
 	std::vector<Player*> _players;
-	DiscardPile* _discardpile;
+	DiscardPile* _discardPile;
 
 public:
 	// Constructor and destructor

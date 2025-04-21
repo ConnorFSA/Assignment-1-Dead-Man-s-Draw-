@@ -12,12 +12,11 @@
 #include "DiscardPile.h"
 
 // Constructor and destructor
-Game::Game() : _deck(new Deck(*this)), _turn(0), _round(1), _currentPlayer(nullptr) {
-	DiscardPile* _discardpile = new DiscardPile();
+Game::Game() : _deck(new Deck(*this)), _turn(0), _round(1), _currentPlayer(nullptr), _discardPile(new DiscardPile) {
 }
 Game::~Game() {
 	delete _deck;
-	delete _discardpile;
+	delete _discardPile;
 
 	for (Player* player : _players) {
 		delete player;
@@ -32,8 +31,8 @@ void Game::startGame() {
 	_deck->shuffle();
 
 	// Create new players
-	_players.push_back(new Player(_discardpile));
-	_players.push_back(new Player(_discardpile));
+	_players.push_back(new Player(_discardPile));
+	_players.push_back(new Player(_discardPile));
 
 	_currentPlayer = _players[0];
 
@@ -179,6 +178,9 @@ int main()
 {
 	Game* game = new Game(); // Create game instance
 	game->startGame(); // Run game
+	std::cout << "\nGame has ended! Press any key to exit...";
+	std::string dummy;
+	std::cin >> dummy; // Wait for user input before closing
 	delete game; // Free memory once game is finished
 	return 0;
 }
